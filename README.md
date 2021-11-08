@@ -3,7 +3,7 @@ The first Project of Artificial Intelligent.
 
 Use Search Algorithm to find to path go from start point to the exit of the maze.
 
-The maze have form like below:\
+The maze have form like below:
 <pre>
 x x x   x x
 x x       x
