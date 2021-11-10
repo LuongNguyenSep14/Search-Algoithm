@@ -2,37 +2,32 @@
 from Utility import *
 
 
-# BFS with no bonus
-def bfs_no_bonus(start, end, matrix):
-    v = []
-    v.append([start])  # v_0
-    # close = []
-    k = 0
-    path = []
-    previous = init_pre(matrix)
-    while len(v[k]) != 0 and end not in v[k]:
-        v.append([])  # v_k+1
-        for s in v[k]:
-            ss = succs(matrix, s, v[k], [])
-            for i in ss:
-                if previous[i] is None:
-                    previous[i] = s
-                    v[k + 1].append(i)
-        k = k + 1
-    close = []
-    for i in range(0, k):
-        for j in v[i]:
-            close.append(j)
+def gbfs_no_bonus(start: tuple, end: tuple, matrix, heuristic):
+  pq = [[start, 0]]
+  close = []
+  previous = init_pre(matrix)
+  while len(pq) != 0 and pq[0][0] != end:
+    s = pq.pop(0)
+    close.append(s[0])
+    open = [i[0] for i in pq]
+    ss = succs(matrix, s[0], open, close)
+    for i in ss:
+      d = heuristic(i, end)
+      if previous[i] is None:
+        previous[i] = s[0]
+        pq.append([i, d])
+    pq.sort(key=lambda i:i[1])
 
-    if len(v[k]) == 0:
-        return None
-    else:
-        cur = end
-        cost = None
-        for j in range(k + 1):  # start + path + end
-            path.append(cur)
-            cur = previous[cur]
-        path.reverse()
-        cost = len(path) - 1
-        visited = sub_list(close, path)
-        return cost, path, visited
+  if len(pq) == 0:
+    return None
+  else:
+    cur = end
+    path = []
+    while True:
+      if cur is None:
+        break
+      path.append(cur)
+      cur = previous[cur]
+    path.reverse()
+    visited = sub_list(close, path)
+    return len(path)-1, path, visited
