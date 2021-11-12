@@ -118,12 +118,15 @@ def map_bonus():
         print('Enter a number to select a option')
         print('<1> Map 01')
         print('<2> Map 02')
+        print('<3> Map 03')
         print('<0> Return')
         choice = int(input('Your option:'))
         if choice == 1:
             bonus_points, matrix = read_file('../map/map_bonus01.txt')
         elif choice == 2:
             bonus_points, matrix = read_file('../map/map_bonus02.txt')
+        elif choice == 3:
+            bonus_points, matrix = read_file('../map/map_bonus03.txt')
         else:
             break
         os.system('cls')
