@@ -97,15 +97,15 @@ def map_no_bonus():
         print('<0> Return')
         choice = int(input('Your option:'))
         if choice == 1:
-            bonus_points, matrix = read_file('map/map_no_bonus01.txt')
+            bonus_points, matrix = read_file('../map/map_no_bonus01.txt')
         elif choice == 2:
-            bonus_points, matrix = read_file('map/map_no_bonus02.txt')
+            bonus_points, matrix = read_file('../map/map_no_bonus02.txt')
         elif choice == 3:
-            bonus_points, matrix = read_file('map/map_no_bonus03.txt')
+            bonus_points, matrix = read_file('../map/map_no_bonus03.txt')
         elif choice == 4:
-            bonus_points, matrix = read_file('map/map_no_bonus04.txt')
+            bonus_points, matrix = read_file('../map/map_no_bonus04.txt')
         elif choice == 5:
-            bonus_points, matrix = read_file('map/map_no_bonus05.txt')
+            bonus_points, matrix = read_file('../map/map_no_bonus05.txt')
         else:
             break
         os.system('cls')
@@ -121,9 +121,9 @@ def map_bonus():
         print('<0> Return')
         choice = int(input('Your option:'))
         if choice == 1:
-            bonus_points, matrix = read_file('map/map_bonus01.txt')
+            bonus_points, matrix = read_file('../map/map_bonus01.txt')
         elif choice == 2:
-            bonus_points, matrix = read_file('map/map_bonus02.txt')
+            bonus_points, matrix = read_file('../map/map_bonus02.txt')
         else:
             break
         os.system('cls')
