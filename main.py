@@ -75,9 +75,9 @@ def algo_bonus(bonus_points, matrix):
             print('<2> Euclid Norm')
             t = int(input('Your option:'))
             if t == 1:
-                cost, route, visited = search_star(start, end, matrix, manhattan)
+                cost, route, visited = search_star(start, end, matrix, manhattan, bonus_points)
             elif t == 2:
-                cost, route, visited = search_star(start, end, matrix, euclid_norm)
+                cost, route, visited = search_star(start, end, matrix, euclid_norm, bonus_points)
         else:
             break
         print('Cost=', cost)

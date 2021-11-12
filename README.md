@@ -13,3 +13,5 @@ x x x x x x
 
 - With START point is notated as **S**.
 - And there is only one EXIT point in the maze.
+
+Link demo: https://youtu.be/YnhuyJ9-rpQ
